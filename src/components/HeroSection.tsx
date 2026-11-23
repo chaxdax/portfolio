@@ -122,7 +122,7 @@ export default function HeroSection({ entranceComplete }: HeroSectionProps) {
           {/* Left column — centered on mobile, left-aligned on desktop */}
           <div className="flex flex-col gap-4 items-center text-center md:items-start md:text-left">
             <h1
-              className="text-white font-light leading-[0.95] tracking-[-0.03em]"
+              className="text-white font-bold md:font-light leading-[0.95] tracking-[-0.03em]"
               style={{ fontSize: 'clamp(40px, 10vw, 100px)' }}
             >
               <ScrambleIn text="Chandan" delay={200} triggered={entranceComplete} />
