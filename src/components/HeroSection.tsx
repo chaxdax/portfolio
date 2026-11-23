@@ -119,8 +119,8 @@ export default function HeroSection({ entranceComplete }: HeroSectionProps) {
 
         {/* Bottom row */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          {/* Left column */}
-          <div className="flex flex-col gap-4">
+          {/* Left column — centered on mobile, left-aligned on desktop */}
+          <div className="flex flex-col gap-4 items-center text-center md:items-start md:text-left">
             <h1
               className="text-white font-light leading-[0.95] tracking-[-0.03em]"
               style={{ fontSize: 'clamp(40px, 10vw, 100px)' }}
@@ -132,7 +132,7 @@ export default function HeroSection({ entranceComplete }: HeroSectionProps) {
 
             {/* Status badge */}
             <motion.div
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 justify-center md:justify-start"
               initial={{ opacity: 0, y: 25 }}
               animate={entranceComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
               transition={{ duration: 0.9, delay: 0.15, ease: [0.215, 0.61, 0.355, 1.0] }}
@@ -148,12 +148,12 @@ export default function HeroSection({ entranceComplete }: HeroSectionProps) {
 
             {/* Role + location */}
             <motion.div
-              className="flex flex-col gap-1.5"
+              className="flex flex-col gap-1.5 items-center md:items-start"
               initial={{ opacity: 0, y: 25 }}
               animate={entranceComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
               transition={{ duration: 0.9, delay: 0.25, ease: [0.215, 0.61, 0.355, 1.0] }}
             >
-              <p className="text-white text-[14px] sm:text-[16px] font-normal tracking-tight">
+              <p className="text-white text-[14px] sm:text-[16px] font-normal tracking-tight text-center md:text-left">
                 Cyber Security &amp; Digital Forensics
               </p>
               <p className="text-white/40 text-[12px] sm:text-[13px] tracking-wide flex items-center gap-1.5">
@@ -166,7 +166,7 @@ export default function HeroSection({ entranceComplete }: HeroSectionProps) {
 
             {/* Speciality tags */}
             <motion.div
-              className="flex flex-wrap gap-2"
+              className="flex flex-wrap gap-2 justify-center md:justify-start"
               initial={{ opacity: 0, y: 25 }}
               animate={entranceComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
               transition={{ duration: 0.9, delay: 0.35, ease: [0.215, 0.61, 0.355, 1.0] }}
@@ -182,9 +182,9 @@ export default function HeroSection({ entranceComplete }: HeroSectionProps) {
             </motion.div>
           </div>
 
-          {/* Right heading */}
+          {/* Right heading — hidden on mobile, shown on desktop */}
           <h1
-            className="text-white font-light leading-[0.95] tracking-[-0.03em] text-left md:text-right"
+            className="hidden md:block text-white font-light leading-[0.95] tracking-[-0.03em] text-right"
             style={{ fontSize: 'clamp(40px, 10vw, 100px)' }}
           >
             <ScrambleIn text="Cyber" delay={700} triggered={entranceComplete} />
